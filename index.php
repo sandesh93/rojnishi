@@ -107,7 +107,7 @@
 				<div class="col-sm-offset-3 col-sm-6">
 					<a href="register.php" style="text-decoration:none;"><button type="submit" class="btn btn-warning btn-lg mybtn center-block" value="signup">Sign Up</button></a>
 				</div>
-			</div>
+		</div>
 	</div>
 	</div>
 </body>

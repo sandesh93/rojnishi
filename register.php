@@ -136,10 +136,16 @@
 			
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<button type="submit" class="btn btn-warning btn-lg mybtn center-block" value="signup" name="submit">Sign Up</button>
+					<button type="submit" class="btn btn-warning btn-lg mybtn center-block" value="signup" name="submit">Sign Up</button> <br>
 				</div>
 			</div>
 		</form>
+		
+		<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-6">
+					<a href="index.php" style="text-decoration:none;"><button type="submit" class="btn btn-warning btn-lg mybtn center-block" >Login form</button></a>
+				</div>
+		</div>
 	</div>
 	</div>
 </body>
