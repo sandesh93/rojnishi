@@ -1,0 +1,30 @@
+body
+{
+	background:#0097a7;
+	height:750px;
+}
+#error
+{
+	color:red;
+	text-align:center;
+	font-size:20px;
+}
+.myinput
+{
+	border-radius:45px;
+	background:#fff;
+	height:47px;
+	box-shadow: 0px 10px 35px 10px  #00000033;
+	-webkit-shadow:0px 10px 35px 10px #00000033;
+	padding:20px;
+}
+.mybtn
+{
+	border-radius:45px;
+	margin:0px auto;
+	width:200px;
+	box-shadow: 0px 10px 35px 10px  #00000033;
+	-webkit-shadow:0px 10px 35px 10px #00000033;
+	outline:none;
+	border:none;
+}
