@@ -65,6 +65,7 @@
 			if(mysqli_query($con, $insertQuery))
 			{
 				$error = "You are Successfully Registered";
+				header("location: index.php");
 			}
 			
 		}
@@ -88,8 +89,8 @@
 <body>
 	<div class="container">
 	<div class="row">
-	<h1 style="color:#fff; font-size:50px; margin-top:30px; margin-bottom:40px; text-align:center; font-family:roboto; font-weight:bold;">Sign Up</h1>
-		<div id="error"><?php echo $error; ?></div>
+	<h1 style="color:#fff; font-size:150px;  margin-bottom:40px; text-align:center; font-family:Sofia; font-weight:bold;">Rojnishi</h1>
+			<div id="error"><?php echo $error; ?></div>
 		<form action="" method="POST">
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
@@ -143,7 +144,7 @@
 		
 		<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<a href="index.php" style="text-decoration:none;"><button type="submit" class="btn btn-warning btn-lg mybtn center-block" >Login form</button></a>
+					<a href="index.php" style="text-decoration:none;"><button type="submit" class="btn btn-info btn-lg mybtn center-block" >Login form</button></a>
 				</div>
 		</div>
 	</div>
