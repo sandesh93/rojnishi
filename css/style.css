@@ -17,6 +17,7 @@ body
 	box-shadow: 0px 10px 35px 10px  #00000033;
 	-webkit-shadow:0px 10px 35px 10px #00000033;
 	padding:20px;
+	
 }
 .mybtn
 {
@@ -28,3 +29,32 @@ body
 	outline:none;
 	border:none;
 }
+.mybtn1{
+	border-radius:20px;
+	width:100px;
+	outline:none;
+	border:none;
+	background:#0097a7;
+	
+}
+.mybtn2{
+	border-radius:75px;
+	margin:0px auto;
+	width:100px;
+	outline:none;
+	border:none;
+	
+	
+}
+.mybtn3{
+	border-radius:75px;
+	margin:0px auto;
+	width:250px;
+	outline:none;
+	border:none;
+	
+	
+}
+
+
+

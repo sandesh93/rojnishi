@@ -35,7 +35,7 @@
 					setcookie("email",$email, time()+3600);
 				}
 				
-				header("location: profile.php");
+				header("location: 2.php");
 			}
 			
 			

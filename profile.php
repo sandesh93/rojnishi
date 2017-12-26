@@ -10,6 +10,8 @@
 			while($row = mysqli_fetch_assoc($result)) {
 				$name = $row['firstName']." ".$row['lastName'];
 				$photo = $row['photo'];
+				$email = $row['email'];
+				$phone = $row['phone'];
 	?>
 	
 	<html>
@@ -28,81 +30,80 @@
 			
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	  
-	  
+	  <script type="text/javascript">
+	  $("document").ready(function(){
+				 $("#edit").click(function(){	
+				 $("#email,#tel").prop('disabled', false);
+				 })
+				 $("#save").click(function(){	
+				 $("#email,#tel").prop('disabled', true);
+				 })
+			})
+			</script>
     </head>
-<body>
-		<div class ='row'>
-			<div class ="right">
-			<a class='dropdown-button btn-large pulse' href='#' data-activates='dropdown1'>Options</a>
-
-				  <!-- Dropdown Structure -->
-				  <ul id='dropdown1' class='dropdown-content'>
-					<li ><a href="profile.php" class="center-align ">
-						<img class="circle responsive-img" src="images/<?php echo $photo; ?>" alt="Contact Person">
-						<span class="Green-text"><?php echo $name;?></span>
-					</a></li>
-					<li class="divider"></li>
-					<li><a href="chat.php"><i class="material-icons">chat</i>Chat</a></li>
-					<li class="divider"></li>
-					<li class="center "><form action='logout.php' method = 'post'>
-						<a class="center-align "><input type="submit" name='logout' id ='logout' class="btn-large" value='Logout'></a>
-					</form></li>
-				  </ul> <!-- Dropdown Structure -->
-			</div>
+<body style="background:#e8e8e8;">
+		<nav>
+		<div class="nav-wrapper" style="background:#0097a7;">  <!-- Nav bar Structure -->
+		  <a href="2.php" class="brand-logo center "><h2 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h2></a>
+		  <ul id="nav-mobile"  class="right " >
+		   
+		  </ul>
 		</div>
-		
-					
-			<div class="col s12 col-sm-offset-3 col-sm-6">
-			 <a href="profile.php"><h1 style=" font-size:150px;  margin-bottom:40px; font-family:Sofia; font-weight:bold;" class="center-align flow-text white-text">Rojnishi</h1></a>
-			</div>
-					<!-- Page Layout here -->
-					
+	</nav> <br>     <!-- Nav bar Structure --> 		
+		<h2 class="center-align">Edit Profile</h2>
+	<!-- Profile Update form -->
+		<div class="row">
+		  <div class="col s12 offset-m3 m6 ">
+			<div class="card-panel hoverable " style="margin-top:100px;">
+			  <div class="row">
+					<div class="col s12">
 					<div class="row">
-							<div class="col s12 m6">
-							  <div class="col s12  center">
-							  <img class="circle responsive-img" src="images/<?php echo $photo; ?>" alt="Contact Person">
-							  <h1 class="white-text center"><?php echo $name;?></h1>
-							  </div>
-								<!-- Teal page content  -->
-							</div>
-					  <div class="col s12 m6 ">
-						  <div class="col s12 center ">
-							<!-- Grey navigation panel -->
-							<br> <br>  <br> 
-							<a href="1.php" class="waves-effect waves-light btn-large"><i class="material-icons right">search</i>search by date</a> <br><br>
-							<a href="2.php" class="waves-effect waves-light btn-large"><i class="material-icons right"></i> Want To Write? </a> <br><br>
-							<a class="waves-effect waves-light btn-large" onclick="myFunction()"><i class="material-icons right" >save</i>Save</a> <br><br> <br><br> <br><br> <br><br> <br><br> <br> 
-						  </div>
-					  </div>
-
-							
-
+						<div class="col s12 center" style="margin-top:-100px; ">
+							<img class="circle responsive-img center hoverable " style="height:200px; width:200px"src="images/<?php echo $photo; ?>" alt="Contact Person">
+							<h3 class="Green-text center-align"><?php echo $name;?></h3> 
+						</div>
 					</div>
+					
+				<div class="row" style="margin:-5px -5px -5px -5px;" >
+					<div class="input-field col s12 ">
+						 <div class="file-field input-field " >
+							  <div class="btn">
+								<span>File</span>
+								<input type="file">
+							  </div>
+							  <div class="file-path-wrapper">
+								<input class="file-path validate" type="text">
+							  </div>
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+						  <input id="email" type="email" disabled value="<?php echo $email;?>" class="validate disable">
+						  <label for="email">Email</label>
+						</div>
+					</div>
+					  <div class="row">
+						 <a class="waves-effect waves-light btn"  href="changepassword.php">change password</a>
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="input-field col s12">
+						  <input id="tel" type="tel" disabled value="<?php echo $phone;?>" class="validate" /><br/>
+						  <label for="tel">Moblie Number</label>
+						</div>
+					  </div>
+					  <button class="btn-floating btn waves-effect waves-light hoverable red left" id="edit" ><i class="material-icons" style="font-size:18px;">edit</i></button>
+					  <button class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'>save</button>
+					</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	<!-- Profile Update form -->	
+					
 				
-					<footer class="page-footer"> <!-- footer content  -->
-					  <div class="container">
-						<div class="row">
-						  <div class="col l6 s12">
-							<h5 class="white-text">GMS INFOTECH PVT. LTD.</h5>
-							<p class="grey-text text-lighten-4">Rohit Kadam, Samadhan Pawar, Gaurav Rane, Milind Mahajan, Sandesh Rane </p>
-						  </div>
-						  <div class="col l4 offset-l2 s12">
-							<h5 class="white-text">links</h5>
-							<ul>
-							  <li><a class="grey-text text-lighten-3" href="#!">www.rojnishi.com</a></li>
-							  <li><a class="grey-text text-lighten-3" href="#!">www.chatmaja.com</a></li>
-							</ul>
-						  </div>
-						</div>
-					  </div>
-					  <div class="footer-copyright">
-						<div class="container">
-						© 2018 Copyright GMS INFOTECH PVT. LTD.
-						<a class="grey-text text-lighten-4 right" href="profile.php">Home</a>
-						</div>
-					  </div>
-					</footer> <!-- footer content  -->
+					
 	  
 	  
 
@@ -110,7 +111,7 @@
       
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/myscript.js"></script>
-	  <script>
+	  <script type="text/javascript">
 	  function myFunction() {
 		swal({
 			title: "Under construction",

@@ -5,7 +5,7 @@
 	
 	if(logged_in())
 	{
-		header("location: profile.php");
+		header("location: 1.php");
 		exit();
 	}
 
@@ -93,13 +93,13 @@
 			<div id="error"><?php echo $error; ?></div>
 		<form action="" method="POST">
 			<div class="form-group">
-				<div class="col-sm-offset-3 col-sm-6">
+				<div class="col-sm-offset-3 col-sm-3">
 					<input type="text" class="form-control myinput" Placeholder="First Name" name="fname" required /><br/>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<div class="col-sm-offset-3 col-sm-6">
+				<div class="col-sm-3">
 					<input type="text" class="form-control myinput" Placeholder="Last Name" name="lname" required /><br/>
 				</div>
 			</div>
@@ -140,11 +140,16 @@
 					<button type="submit" class="btn btn-warning btn-lg mybtn center-block" value="signup" name="submit">Sign Up</button> <br>
 				</div>
 			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-6">
+					<h5 style="text-align:center; color:#fff;">- OR -</h5><br/>
+				</div>
+			</div>
 		</form>
 		
 		<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<a href="index.php" style="text-decoration:none;"><button type="submit" class="btn btn-info btn-lg mybtn center-block" >Login form</button></a>
+					<a href="index.php" style="text-decoration:none;"><button type="submit" class="btn btn-info btn-lg mybtn center-block" >Log In</button></a>
 				</div>
 		</div>
 	</div>

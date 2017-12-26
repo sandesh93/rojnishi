@@ -49,32 +49,32 @@
 					})
 				})
 			})
+			
 	 </script>
+	 <script>
+	  
+	</script>
     </head>
-	<body>
-			<div class ='row'>
-			<div class ="right">
-			<a class='dropdown-button btn-large pulse' href='#' data-activates='dropdown1'>Options</a>
-
-				  <!-- Dropdown Structure -->
-				  <ul id='dropdown1' class='dropdown-content'>
-					<li ><a href="profile.php" class="center-align ">
-						<img class="circle responsive-img" src="images/<?php echo $photo; ?>" alt="Contact Person">
-						<span class="Green-text"><?php echo $name;?></span>
-					</a></li>
+	<body style="background:#e8e8e8;">
+	<nav>
+		<div class="nav-wrapper" style="background:#0097a7;">  <!-- Nav bar Structure -->
+		  <a href="2.php" class="brand-logo center "><h2 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h2></a>
+		  <ul id="nav-mobile"  class="right " >
+		    <a class='dropdown-button' href='#' data-activates='dropdown1'><li><img style="width:50px; height:50px; margin-top:5px; margin-right:15px;" class="circle img-responsive" src="images/<?php echo $photo; ?>" alt="Contact Person"></li></a>
+		   <!-- Dropdown Structure -->
+				  <ul id='dropdown1' style="margin-top:70px; margin-left:-50px;" class='dropdown-content'>
+					<li><a href="profile.php">Profile</a></li>
 					<li class="divider"></li>
-					<li><a href="chat.php"><i class="material-icons">chat</i>Chat</a></li>
-					<li class="divider"></li>
-					<li class="center "><form action='logout.php' method = 'post'>
-						<a class="center-align "><input type="submit" name='logout' id ='logout' class="btn-large" value='Logout'></a>
-					</form></li>
-				  </ul> <!-- Dropdown Structure -->
-			</div>
+						<form action='logout.php' method = 'post'>
+							<input type="submit" name='logout' id ='logout' class="btn mybtn2 center" value='Logout'>
+						</form>
+				  </ul>
+		  </ul>
 		</div>
-			<a href="profile.php"><h1 style="color:#fff; font-size:150px;  margin-bottom:40px; text-align:center; font-family:Sofia; font-weight:bold;">Rojnishi</h1></a>		
-		
+	</nav>    <!-- Nav bar Structure -->
+					
 		<div class="row center "> 
-		<h3 style ="color:#fff"> Search Date Here.. </h3> 
+		<h3 style ="color:black"> Search Date Here.. </h3> 
 			<div class="row center-align ">
 				<div class="col offset-s2 s8 center"> 
 				 <input type="text" class="datepicker" name = 'date' id = 'date' placeholder="Select Date">
@@ -87,15 +87,15 @@
 		
 		<div class="row">
 		  <div class="col s12 offset-m3 m6">
-			<div class="card-panel teal">
-			<h2 id = 'date1' align='center' style ="color:#fff"></h2>
-			<h5 id = "data" class="center-align " style ="color:#fff"></h5>
+			<div class="card-panel">
+			<h5 id = 'date1' align='left-align'></h5>
+			<h2 id = "data" class="center-align "></h2>
 			</div>
 		  </div>
 		</div> 
-		</div>
+		
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/myscript.js"></script>
 </body>
