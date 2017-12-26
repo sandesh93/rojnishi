@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2017 at 02:01 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: Dec 26, 2017 at 03:09 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,8 +37,12 @@ CREATE TABLE `data` (
 --
 
 INSERT INTO `data` (`email`, `text`, `date`) VALUES
+('c@gmail.com', 'my name is Gaurav ', '25-12-17'),
+('c@gmail.com', 'wdaadww', '26-12-17'),
+('gauravrane56@gmail.com', 'egthrhtrhtrhtrhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhrghnynjhyttmtmjtyumjytummyumy', '25-12-17'),
+('gauravrane56@gmail.com', 'Good Night   ', '26-12-17'),
 ('mnmahajan22@gmail.com', 'dskdad', '23-12-17'),
-('mnmahajan22@gmail.com', 'Hi there', '25-12-17');
+('mnmahajan22@gmail.com', '        today is my birthday', '25-12-17');
 
 -- --------------------------------------------------------
 
@@ -69,7 +73,9 @@ INSERT INTO `users` (`id`, `firstName`, `lastName`, `phone`, `email`, `password`
 (5, 'sam', 'pawar', 7208385842, 'c@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017', NULL),
 (6, 'rohit', 'kadam', 9878999999, 'me@gmail.com', '0d73379b8293acea94298db378afffc0', 'December, 22 2017', NULL),
 (7, 'Milind', 'mahajan', 8976820457, 'mnmahajan22@gmail.com', 'ed33732dcf137c1b9f3dc29d8e0cf145', 'December, 23 2017', 'milind.jpg'),
-(8, 'abc', 'bac', 1234567890, 'ab@mail.com', 'ed33732dcf137c1b9f3dc29d8e0cf145', 'December, 23 2017', NULL);
+(8, 'abc', 'bac', 1234567890, 'ab@mail.com', 'ed33732dcf137c1b9f3dc29d8e0cf145', 'December, 23 2017', NULL),
+(9, 'Gaurav', 'Rane', 8976785247, 'gauravrane56@gmail.com', '80c823f4b30877c43b55c94f5af9c09d', 'December, 25 2017', 'gaurav.png'),
+(10, 'sam', 'pawar', 7208385842, 'sam@gmail.com', '482c811da5d5b4bc6d497ffa98491e38', 'December, 26 2017', 'sam.jpg');
 
 --
 -- Indexes for dumped tables
@@ -95,7 +101,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
