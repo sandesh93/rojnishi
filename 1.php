@@ -85,11 +85,11 @@
 			</div>
 		</div>
 		
-		<div class="row">
+		<div class="row" >
 		  <div class="col s12 offset-m3 m6">
-			<div class="card-panel">
-			<h5 id = 'date1' align='left-align'></h5>
-			<h2 id = "data" class="center-align "></h2>
+			<div class="card-panel flow-text">
+			<h5 id = 'date1' ></h5>
+			<div id = "data"  ></div>
 			</div>
 		  </div>
 		</div> 

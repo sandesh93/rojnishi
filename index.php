@@ -35,7 +35,7 @@
 					setcookie("email",$email, time()+3600);
 				}
 				
-				header("location: 2.php");
+				header("location: profile.php");
 			}
 			
 			
@@ -65,7 +65,7 @@
 <body>
 	<div class="container">
 	<div class="row">
-	<h1 style="color:#fff; font-size:150px;  margin-bottom:40px; text-align:center; font-family:Sofia; font-weight:bold;">Rojnishi</h1>
+	<h1 style="color:#fff; font-size:150px; margin-top:50px; margin-bottom:40px; text-align:center; font-family:Sofia; font-weight:bold;">Rojnishi</h1>
 		<form action="index.php" method="POST">
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
@@ -92,7 +92,7 @@
 			
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<button type="submit" class="btn btn-warning btn-lg mybtn center-block" name="submit" value="login">Log In</button><br/>
+					<button type="submit" class="btn btn-info btn-lg mybtn center-block" name="submit" value="login">Log In</button><br/>
 				</div>
 			</div>
 			
@@ -105,7 +105,7 @@
 		</form>
 		<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<a href="register.php" style="text-decoration:none;"><button type="submit" class="btn btn-info btn-lg mybtn center-block" value="signup">Sign Up</button></a>
+					<a href="register.php" style="text-decoration:none;"><button type="submit" class="btn btn-warning btn-lg mybtn center-block" value="signup">Sign Up</button></a>
 				</div>
 		</div>
 	</div>

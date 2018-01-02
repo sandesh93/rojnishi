@@ -20,6 +20,22 @@
 				$text = $row['text'];
 			}
 		}
+		if(isset($_POST['submit']))
+		{
+			$email = $_SESSION['email'];
+			$data1 = $_POST['editor'];
+			$sql = "INSERT INTO data (email, text, date) VALUES ('".$email."', '".$data1."', '".$date."')";
+			if ($con->query($sql) === TRUE) {
+				echo "Success";
+			} else {
+				$sql = "update data set text = '".$data1."' where email = '".$email."' and date = '".$date."';";
+					if ($con->query($sql) === TRUE) {
+						echo "Success";
+					} else {
+							echo "Error".$conn->error;
+					}
+			}
+		}
 		
 	?>
 <html>
@@ -36,31 +52,34 @@
 	  
 	  		<script type='text/javascript' src='js/jquery-3.2.1.js'></script>
 			<script type="text/javascript" src="js/sweetalert.min.js"></script>
+			
+
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <script src="ckeditor/ckeditor.js"></script>
 	  <script>
-			$("document").ready(function(){
-					
-					$("#save").click(function(){
-						var data1 = $("textarea#textarea1").val();
-						$("textarea#textarea1").prop('disabled', true);
-						$.post('update.php',{
-							data1:data1
-						},
-						function(data){
-							if(data == "success"){
-								$("#demo").html(data1);
-							}
-							else{
+			// $("document").ready(function(){
+					// $("#save").click(function(){
+						// var data1 = $("textarea#textarea1").val();
+						// alert(data1);
+						// $("textarea#textarea1").prop('disabled', true);
+						// $.post('update.php',{
+							// data1:data1
+						// },
+						// function(data){
+							// if(data == "success"){
+								// $("#demo").html(data1);
+							// }
+							// else{
 								
-							}
-						}
-					)
-				})
-				 $("#edit").click(function(){	
-				 $("textarea#textarea1").prop('disabled', false);
-				 })
-			})
+							// }
+						// }
+					// )
+				// })
+				 // $("#edit").click(function(){	
+				 // $("textarea#textarea1").prop('disabled', false);
+				 // })
+			// })
 	  </script>
 	  
 	   
@@ -75,7 +94,7 @@
 				  <ul id='dropdown1' style="margin-top:70px; margin-left:-50px;" class='dropdown-content'>
 					<li><a href="profile.php">Profile</a></li>
 					<li class="divider"></li>
-						<form action='logout.php' method = 'post'>
+						<form action='logout.php' method='post'>
 							<input type="submit" name='logout' id ='logout' class="btn mybtn2 center" value='Logout'>
 						</form>
 				  </ul>
@@ -91,22 +110,25 @@
 		</div>
 		</div> 
 		<div class="row" >
-		
+			<form method='post' action = '2.php' name = 'Form'>
 			  <div class="col s12 offset-m2 m8 center">
 				<div class="card-panel hoverable"  >
 					<div class="row" style="margin:-5px -5px -5px -5px;">
 					  <div class="input-field col s12">
 						
-						<textarea style=" font-size:30px;" id="textarea1" disabled class="materialize-textarea disable" data-length="500" ><?php echo $text; ?></textarea> <br> <br>
+						<textarea id="textarea1"  class="materialize-textarea ckeditor" name="editor"  ><?php echo $text; ?></textarea> <br> <br>
+					<!--	<textarea id="textarea1"  class="ckeditor" name="editor"  ><?php //echo $text; ?></textarea> <br> <br>-->
 					
-						<label for="textarea1">Write here...</label>
+						
 						
 						<button class="btn-floating btn waves-effect waves-light hoverable red left" id="edit" ><i class="material-icons" style="font-size:18px;">edit</i></button>
-						<button class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'>save</button>
+						<!--<button class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'>save</button>-->
+						<input type='submit' name = 'submit' class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'/>
 					  </div>
 					</div>				  			
 				</div>
 			 </div> 
+			 </form>
 		</div>
       <!--Import jQuery before materialize.js-->
       

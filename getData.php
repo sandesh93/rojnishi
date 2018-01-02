@@ -3,7 +3,11 @@
 	include("connect.php");
 	include("functions.php");
 	$date1 = $_POST['date1'];
-	$dd = substr($date1,0,2);
+	$dd = str_replace(" ","",substr($date1,0,2));
+	if (strlen($dd) == 1)
+	{
+		$dd = "0".$dd;
+	}
 	$mm = getMonth($date1);
 	$yy = substr($date1,strlen($date1)-2,strlen($date1));
 	$dat = $dd."-".$mm."-".$yy;
