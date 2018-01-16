@@ -4,7 +4,7 @@
 	
 	if(logged_in())
 	{
-		$result = mysqli_query($con,"Select * from users where email = '".$_SESSION['email']."';");
+		$result = mysqli_query($con,"Select * from users where username = '".$_SESSION['user']."';");
 		if (mysqli_num_rows($result) > 0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				$name = $row['firstName']." ".$row['lastName'];
@@ -85,11 +85,11 @@
 			</div>
 		</div>
 		
-		<div class="row" >
-		  <div class="col s12 offset-m3 m6">
-			<div class="card-panel flow-text">
-			<h5 id = 'date1' ></h5>
-			<div id = "data"  ></div>
+		<div class="row">
+		  <div class="col s12 offset-m2 m8">
+			<div class="card-panel flow-text hoverable animated bounce" style="background-image:url('https://hdwallsource.com/img/2015/6/old-notebook-paper-wallpaper-45973-47255-hd-wallpapers.jpg'); ">
+			<h5 id = 'date1'></h5>
+			<div id = "data"></div>
 			</div>
 		  </div>
 		</div> 

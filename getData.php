@@ -14,7 +14,7 @@
 
 	if(logged_in())
 	{
-		$result = mysqli_query($con,"Select * from data where email = '".$_SESSION['email']."' and date = '".$dat."';");
+		$result = mysqli_query($con,"Select * from data where username = '".$_SESSION['user']."' and date = '".$dat."';");
 		if (mysqli_num_rows($result) > 0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				echo $row['text'];

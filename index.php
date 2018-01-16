@@ -13,26 +13,25 @@
 	
 	if(isset($_POST['submit']))
 	{
-		$email = $_POST['email'];
+		$user = $_POST['user'];
 		$password = $_POST['password'];
 		$checkBox = isset($_POST['keep']);
 		
-		if(email_exists($email, $con))
-		{
-			$result = mysqli_query($con, "SELECT password FROM users WHERE email='$email'");
+		if(email_exists($user, $con))
+		{			
+			$result = mysqli_query($con, "SELECT password FROM users WHERE username='$user'");
 			$retrievepassword = mysqli_fetch_assoc($result);
-			
 			if(md5($password) !== $retrievepassword['password'])
 			{
 				$error = "Password is Incorrect";
 			}
 			else
 			{
-				$_SESSION['email'] = $email;
+				$_SESSION['user'] = $user;
 				
 				if($checkBox == "on")
 				{
-					setcookie("email",$email, time()+3600);
+					setcookie("user",$user, time()+3600);
 				}
 				
 				header("location: profile.php");
@@ -69,7 +68,7 @@
 		<form action="index.php" method="POST">
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<input type="text" class="form-control myinput" Placeholder="Email" name="email" required /><br/>
+					<input type="text" class="form-control myinput" Placeholder="Username" name="user" required /><br/>
 				</div>
 			</div>
 			

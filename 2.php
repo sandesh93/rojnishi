@@ -6,7 +6,7 @@
 	if(logged_in())
 	{
 		$text = "";
-		$result = mysqli_query($con,"Select * from users where email = '".$_SESSION['email']."';");
+		$result = mysqli_query($con,"Select * from users where username = '".$_SESSION['user']."';");
 		if (mysqli_num_rows($result) > 0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				$name = $row['firstName']." ".$row['lastName'];
@@ -14,7 +14,7 @@
 			}
 		}
 		$date = date("d-m-y");
-		$result1 = mysqli_query($con,"Select text from data where email = '".$_SESSION['email']."' and date = '".$date."';");
+		$result1 = mysqli_query($con,"Select text from data where username = '".$_SESSION['user']."' and date = '".$date."';");
 		if (mysqli_num_rows($result1) > 0) {
 			while($row = mysqli_fetch_assoc($result1)) {
 				$text = $row['text'];
@@ -22,13 +22,13 @@
 		}
 		if(isset($_POST['submit']))
 		{
-			$email = $_SESSION['email'];
+			$user = $_SESSION['user'];
 			$data1 = $_POST['editor'];
-			$sql = "INSERT INTO data (email, text, date) VALUES ('".$email."', '".$data1."', '".$date."')";
+			$sql = "INSERT INTO data (username, text, date) VALUES ('".$user."', '".$data1."', '".$date."')";
 			if ($con->query($sql) === TRUE) {
 				echo "Success";
 			} else {
-				$sql = "update data set text = '".$data1."' where email = '".$email."' and date = '".$date."';";
+				$sql = "update data set text = '".$data1."' where username = '".$user."' and date = '".$date."';";
 					if ($con->query($sql) === TRUE) {
 						echo "Success";
 					} else {

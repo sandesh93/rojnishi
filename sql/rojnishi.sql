@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2017 at 09:38 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Jan 02, 2018 at 07:28 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,6 +23,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data`
+--
+
+CREATE TABLE `data` (
+  `email` varchar(80) NOT NULL,
+  `text` text,
+  `date` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data`
+--
+
+INSERT INTO `data` (`email`, `text`, `date`) VALUES
+('c@gmail.com', 'my name is Gaurav ', '25-12-17'),
+('c@gmail.com', 'wdaadww', '26-12-17'),
+('gauravrane56@gmail.com', '', '01-01-18'),
+('gauravrane56@gmail.com', '<p style="text-align:center"><span style="font-size:72px"><span style="font-family:Trebuchet MS,Helvetica,sans-serif"><span style="color:#c0392b"><strong>Gaurav Rane</strong></span></span></span></p>\r\n\r\n<h1><span style="font-family:Trebuchet MS,Helvetica,sans-serif"><span style="color:#c0392b"><strong><span style="font-size:18px">My name is Gaurav and i spend lot off time to do this......<img alt="cool" src="http://localhost/rojnishi-master-1.1/ckeditor/plugins/smiley/images/shades_smile.png" style="height:23px; width:23px" title="cool" /></span></strong></span></span></h1>\r\n', '02-01-18'),
+('gauravrane56@gmail.com', 'egthrhtrhtrhtrhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhrghnynjhyttmtmjtyumjytummyumy', '25-12-17'),
+('gauravrane56@gmail.com', 'Good Night   gaurav\n\n\n\n\ngi', '26-12-17'),
+('gauravrane56@gmail.com', '', '27-12-17'),
+('gauravrane56@gmail.com', 'Hi Rohit Kadam', '28-12-17'),
+('mnmahajan22@gmail.com', 'dskdad', '23-12-17'),
+('mnmahajan22@gmail.com', '        today is my birthday', '25-12-17');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -35,24 +61,35 @@ CREATE TABLE `users` (
   `phone` bigint(10) NOT NULL,
   `email` varchar(80) NOT NULL,
   `password` text NOT NULL,
-  `date` text NOT NULL
+  `date` text NOT NULL,
+  `photo` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstName`, `lastName`, `phone`, `email`, `password`, `date`) VALUES
-(1, 'sam', 'pawar', 0, 'email@example.com', '25d55ad283aa400af464c76d713c07ad', 'December, 22 2017'),
-(2, 'rohit', 'kadam ', 0, 'me.rohitkadam@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017'),
-(3, 'sam', 'pawar', 0, 'a@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017'),
-(4, 'sam', 'pawar', 0, 'b@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017'),
-(5, 'sam', 'pawar', 7208385842, 'c@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017'),
-(6, 'rohit', 'kadam', 9878999999, 'me@gmail.com', '0d73379b8293acea94298db378afffc0', 'December, 22 2017');
+INSERT INTO `users` (`id`, `firstName`, `lastName`, `phone`, `email`, `password`, `date`, `photo`) VALUES
+(1, 'sam', 'pawar', 0, 'email@example.com', '25d55ad283aa400af464c76d713c07ad', 'December, 22 2017', NULL),
+(2, 'rohit', 'kadam ', 0, 'me.rohitkadam@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017', NULL),
+(3, 'sam', 'pawar', 0, 'a@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017', NULL),
+(4, 'sam', 'pawar', 0, 'b@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017', NULL),
+(5, 'sam', 'pawar', 7208385842, 'c@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'December, 22 2017', NULL),
+(6, 'rohit', 'kadam', 9878999999, 'me@gmail.com', '0d73379b8293acea94298db378afffc0', 'December, 22 2017', NULL),
+(7, 'Milind', 'mahajan', 8976820457, 'mnmahajan22@gmail.com', 'ed33732dcf137c1b9f3dc29d8e0cf145', 'December, 23 2017', 'milind.jpg'),
+(8, 'abc', 'bac', 1234567890, 'ab@mail.com', 'ed33732dcf137c1b9f3dc29d8e0cf145', 'December, 23 2017', NULL),
+(9, 'Gaurav', 'Rane', 8976785247, 'gauravrane56@gmail.com', '80c823f4b30877c43b55c94f5af9c09d', 'December, 25 2017', 'gaurav.png'),
+(10, 'sam', 'pawar', 7208385842, 'sam@gmail.com', '482c811da5d5b4bc6d497ffa98491e38', 'December, 26 2017', 'sam.jpg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `data`
+--
+ALTER TABLE `data`
+  ADD PRIMARY KEY (`email`,`date`);
 
 --
 -- Indexes for table `users`
@@ -68,9 +105,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

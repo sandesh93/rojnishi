@@ -16,6 +16,7 @@
 		$firstName = $_POST['fname'];
 		$lastName = $_POST['lname'];
 		$email = $_POST['email'];
+		$user = $_POST['username'];
 		$phone = $_POST['phone'];
 		$password = $_POST['password'];
 		$passwordConfirm = $_POST['passwordConfirm'];
@@ -40,9 +41,9 @@
 		{
 			$error = "Please Enter a Valid Mobile Number";
 		}
-		else if(email_exists($email, $con))
+		else if(email_exists($user, $con))
 		{
-			$error = "*Someone is already Registered with this Email Address*";
+			$error = "*Someone is already Registered with this Username*";
 		}
 		else if(strlen($password) < 8)
 		{
@@ -61,7 +62,7 @@
 		{
 			$password = md5($password);
 			
-			$insertQuery = "INSERT INTO users(firstName, lastName, email, phone, password, date) VALUES('$firstName','$lastName','$email','$phone','$password','$date')";
+			$insertQuery = "INSERT INTO users(firstName, lastName, email, phone, password, date,username) VALUES('$firstName','$lastName','$email','$phone','$password','$date','$user')";
 			if(mysqli_query($con, $insertQuery))
 			{
 				$error = "You are Successfully Registered";
@@ -87,11 +88,19 @@
 	<script src="js/bootstrap.js"></script>
 	</head>
 <body>
+
 	<div class="container">
 	<div class="row">
 	<h1 style="color:#fff; font-size:50px; margin-top:30px; margin-bottom:40px; text-align:center; font-family:roboto; font-weight:bold;">Sign Up</h1>
 		<div id="error"><?php echo $error; ?></div>
+		
 		<form action="" method="POST">
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-6">
+					<input type="text" class="form-control myinput" Placeholder="Username" name="username" required /><br/>
+				</div>
+			</div>
+
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
 					<input type="text" class="form-control myinput" Placeholder="First Name" name="fname" required /><br/>
