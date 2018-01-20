@@ -1,5 +1,4 @@
 <?php
-
 	include("connect.php");
 	include("functions.php");
 	
@@ -87,31 +86,33 @@
 		  </ul>
 		</div>
 	</nav> <br>     <!-- Nav bar Structure --> 		
-		<h2 class="center-align">Edit Profile</h2>
+		<h2 class="center-align" style="font-family:Sofia;">Edit Profile</h2>
+		<a style="background:#0097a7;" href="2.php" class="waves-effect waves-light btn-large right animated tada"><i class="material-icons right">edit</i>Want to wright ? </a>
+
 	<!-- Profile Update form -->
 		<div class="row">
 		  <div class="col s12 offset-m3 m6 ">
-			<div class="card-panel hoverable " style="margin-top:100px;">
+			<div class="card-panel hoverable yellow accent-1" style="margin-top:100px;">
 			  <div class="row">
 					<div class="col s12">
 					<div class="row">
 						<div class="col s12 center" style="margin-top:-100px; ">
-							<img class="circle responsive-img center hoverable " style="height:200px; width:200px"src="images/<?php echo $photo; ?>" alt="Contact Person">
-							<h3 class="Green-text center-align"><?php echo $name;?></h3> 
+							<img class="circle responsive-img center hoverable " style="height:180px; width:180px"src="images/<?php echo $photo; ?>" alt="Contact Person">
+							<h3 class="center-align" style="font-family:Sofia;" ><?php echo $name;?></h3> 
 						</div>
 					</div>
 				<div class="row" style="margin:-5px -5px -5px -5px;" >
 				<form action='' method='POST' enctype='multipart/form-data'>
 				<div class="file-field input-field " >
-							  <div class="btn">
+							  <div style="background:#0097a7;" class="btn">
 								<span>File</span>
-								<input type="file" name='userFile'>
+								<input style="background:#0097a7;" type="file" name='userFile' >
 							  </div>
 							  <div class="file-path-wrapper">
-								<input class="file-path validate" type="text">
+								<input class="file-path validate" type="text" >
 							  </div>
 				</div>
-				<input class="btn" type='submit' name='upload_btn' value='upload'>
+				<input style="background:#0097a7;" class="btn" type='submit' name='upload_btn' value='upload'>
 				</form>
 				
 					<div class="row">
@@ -122,7 +123,7 @@
 					</div>
 					
 					  <div class="row">
-						 <a class="waves-effect waves-light btn"  href="changepassword.php">change password</a>
+						 <a style="background:#0097a7;" class="waves-effect waves-light btn"  href="changepassword.php">change password</a>
 						</div>
 					  </div>
 					  <div class="row">
@@ -131,14 +132,33 @@
 						  <label for="tel">Moblie Number</label>
 						</div>
 					  </div>
-					  <button class="btn-floating btn waves-effect waves-light hoverable red left" id="edit" ><i class="material-icons" style="font-size:18px;">edit</i></button>
-					  <button class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'>save</button>
+					  <button style="background:#0097a7;" class="btn-floating btn waves-effect waves-light hoverable red left" id="edit" ><i class="material-icons" style="font-size:18px;">edit</i></button>
+					  <button class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'><i class="material-icons right">save</i>save</button>
 					</div>
 			  </div>
 			</div>
 		  </div>
 		</div>
-	<!-- Profile Update form -->	
+	
+	<footer class="page-footer" style="background:#0097a7;"> <!--Footer start-->
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Help</h5>
+                <p class="grey-text text-lighten-2">* First click edit than edit the personal Info than click save button.</p>
+				<p class="grey-text text-lighten-3">* for chang profile clock on flie, select photo, than click to Upload.</p>
+				<p class="grey-text text-lighten-4">* For right Rojnishi click WANT TO WRIGHT Button or on th Brand name ROJNISHI.</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © ZED INFOTECH PVT. LTD. 2018
+            <a class="grey-text text-lighten-4 right" href="#!">Our website</a>
+            </div>
+          </div>
+    </footer> <!--Footer End -->
 					
 				
 					
@@ -167,12 +187,10 @@
 			}
 		}	
 			mysqli_close($con);
-
 	}
 	else
 	{
 		header("location: index.php");
 		exit();
 	}
-
 ?>

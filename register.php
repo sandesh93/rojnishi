@@ -10,6 +10,7 @@
 	}
 
 	$error = "";
+	$successerror = "";
 
 	if(isset($_POST['submit']))
 	{
@@ -43,7 +44,7 @@
 		}
 		else if(email_exists($user, $con))
 		{
-			$error = "*Someone is already Registered with this Username*";
+			$error = "Someone is already Registered with this Username";
 		}
 		else if(strlen($password) < 8)
 		{
@@ -65,8 +66,8 @@
 			$insertQuery = "INSERT INTO users(firstName, lastName, email, phone, password, date,username) VALUES('$firstName','$lastName','$email','$phone','$password','$date','$user')";
 			if(mysqli_query($con, $insertQuery))
 			{
-				$error = "You are Successfully Registered";
-				header("location: index.php");
+				$successerror = "You are Successfully Registered";
+				
 			}
 			
 		}
@@ -92,36 +93,40 @@
 	<div class="container">
 	<div class="row">
 	<h1 style="color:#fff; font-size:50px; margin-top:30px; margin-bottom:40px; text-align:center; font-family:roboto; font-weight:bold;">Sign Up</h1>
-		<div id="error"><?php echo $error; ?></div>
-		
+		<div class="col-sm-offset-3 col-sm-6">
+			<div class="alert alert-danger error" role="alert" style="<?php if($error !=""){ ?> display:block; <?php } ?> "><span class="glyphicon glyphicon-exclamation-sign"></span> <?php echo $error; ?></div>
+		</div>
+		<div class="col-sm-offset-3 col-sm-6">
+			<div class="alert alert-success error" role="alert" style="<?php if($successerror !=""){ ?> display:block; <?php } ?> "><span class="glyphicon glyphicon-ok"></span> <?php echo $successerror; ?></div>
+		</div>
 		<form action="" method="POST">
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<input type="text" class="form-control myinput" Placeholder="Username" name="username" required /><br/>
+					<input type="text" class="form-control myinput" Placeholder="Username" name="username" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>" required /><br/>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<input type="text" class="form-control myinput" Placeholder="First Name" name="fname" required /><br/>
+					<input type="text" class="form-control myinput" Placeholder="First Name" name="fname" value="<?php if(isset($_POST['fname'])) echo $_POST['fname']; ?>" required /><br/>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<input type="text" class="form-control myinput" Placeholder="Last Name" name="lname" required /><br/>
+					<input type="text" class="form-control myinput" Placeholder="Last Name" name="lname" value="<?php if(isset($_POST['lname'])) echo $_POST['lname']; ?>" required /><br/>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<input type="text" class="form-control myinput" Placeholder="Email" name="email" required /><br/>
+					<input type="text" class="form-control myinput" Placeholder="Email" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required /><br/>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
-					<input type="tel" class="form-control myinput" Placeholder="Mobile Number" name="phone" required /><br/>
+					<input type="tel" class="form-control myinput" Placeholder="Mobile Number" name="phone" value="<?php if(isset($_POST['phone'])) echo $_POST['phone']; ?>" required /><br/>
 				</div>
 			</div>
 			
@@ -150,6 +155,16 @@
 				</div>
 			</div>
 		</form>
+		<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-6">
+					<h5 style="text-align:center; color:#fff;">- OR -</h5><br/>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-6">
+					<a href="index.php" style="text-decoration:none;"><button type="submit" class="btn btn-info btn-lg mybtn center-block" value="signup">Log In</button></a>
+				</div>
+		</div>
 		</div>
 	</div>
 </body>

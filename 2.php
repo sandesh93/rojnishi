@@ -56,7 +56,7 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	  <script src="ckeditor/ckeditor.js"></script>
+	  <script src="textarea app/ckeditor.js"></script>
 	  <script>
 			// $("document").ready(function(){
 					// $("#save").click(function(){
@@ -87,15 +87,15 @@
 <body style="background:#e8e8e8;">
 	<nav>
 		<div class="nav-wrapper" style="background:#0097a7;">  <!-- Nav bar Structure -->
-		  <a href="2.php" class="brand-logo center "><h2 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h2></a>
+		  <a href="2.php" class="brand-logo center "><h3 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h3></a>
 		  <ul id="nav-mobile"  class="right " >
 		   <a class='dropdown-button' href='#' data-activates='dropdown1'><li><img style="width:50px; height:50px; margin-top:5px; margin-right:15px;" class="circle img-responsive" src="images/<?php echo $photo; ?>" alt="Contact Person"></li></a>
 		   <!-- Dropdown Structure -->
 				  <ul id='dropdown1' style="margin-top:70px; margin-left:-50px;" class='dropdown-content'>
-					<li><a href="profile.php">Profile</a></li>
+					<li><a href="profile.php" >Profile</a></li>
 					<li class="divider"></li>
 						<form action='logout.php' method='post'>
-							<input type="submit" name='logout' id ='logout' class="btn mybtn2 center" value='Logout'>
+							<input style="background:#0097a7;" type="submit" name='logout' id ='logout' class="btn center" value='Logout'>
 						</form>
 				  </ul>
 		  </ul>
@@ -110,9 +110,9 @@
 		</div>
 		</div> 
 		<div class="row" >
-			<form method='post' action = '2.php' name = 'Form'>
+			<form method='post' action='2.php' name ='Form'>
 			  <div class="col s12 offset-m2 m8 center">
-				<div class="card-panel hoverable"  >
+				<div class="card-panel hoverable yellow accent-1">
 					<div class="row" style="margin:-5px -5px -5px -5px;">
 					  <div class="input-field col s12">
 						
@@ -123,13 +123,33 @@
 						
 						<button class="btn-floating btn waves-effect waves-light hoverable red left" id="edit" ><i class="material-icons" style="font-size:18px;">edit</i></button>
 						<!--<button class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'>save</button>-->
-						<input type='submit' name = 'submit' class=" btn mybtn1 waves-effect right hoverable" style="background:#0097a7;" id ='save'/>
+						<input type='submit' name ='submit' class="btn waves-effect right hoverable" style="background:#0097a7;" id ='save'/>
 					  </div>
 					</div>				  			
 				</div>
 			 </div> 
 			 </form>
 		</div>
+		
+	<footer class="page-footer" style="background:#0097a7;"> <!--Footer start-->
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Help</h5>
+                <p class="grey-text text-lighten-2">* use maximaum edit text tools for better look of text.</p>
+				<p class="grey-text text-lighten-3">* click on Submit button after typing Rojnishi.</p>
+				<p class="grey-text text-lighten-4">* for Marathi typing downloade google marathi typing software.</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © ZED INFOTECH PVT. LTD. 2018
+            <a class="grey-text text-lighten-4 right" href="#!">Our website</a>
+            </div>
+          </div>
+    </footer> <!--Footer End -->	
       <!--Import jQuery before materialize.js-->
       
       <script type="text/javascript" src="js/materialize.min.js"></script>

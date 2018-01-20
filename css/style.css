@@ -3,11 +3,10 @@ body
 	background:#0097a7;
 	height:750px;
 }
-#error
+.error
 {
-	color:red;
+	display:none;
 	text-align:center;
-	font-size:20px;
 }
 .myinput
 {
@@ -22,9 +21,14 @@ body
 {
 	border-radius:45px;
 	margin:0px auto;
-	width:200px;
+	width:100px;
 	box-shadow: 0px 10px 35px 10px  #00000033;
 	-webkit-shadow:0px 10px 35px 10px #00000033;
 	outline:none;
 	border:none;
+}
+#button11 {
+  -vendor-animation-duration: 10s;
+  -vendor-animation-delay: 2s;
+  -vendor-animation-iteration-count: infinite;
 }

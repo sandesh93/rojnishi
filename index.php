@@ -5,7 +5,7 @@
 	
 	if(logged_in())
 	{
-		header("location: profile.php");
+		header("location: 2.php");
 		exit();
 	}
 	
@@ -42,7 +42,7 @@
 		}
 		else
 		{
-			$error = "Email ID Does Not Exists";
+			$error = "Username Does Not Exists";
 		}
 		
 	}
@@ -64,7 +64,7 @@
 <body>
 	<div class="container">
 	<div class="row">
-	<h1 style="color:#fff; font-size:150px; margin-top:50px; margin-bottom:40px; text-align:center; font-family:Sofia; font-weight:bold;">Rojnishi</h1>
+	<h1 style="color:#fff; font-size:12vw; margin-top:50px; margin-bottom:40px; text-align:center; font-family:Sofia; font-weight:bold;">Rojnishi</h1>
 		<form action="index.php" method="POST">
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
@@ -80,8 +80,8 @@
 			</div>
 			
 			<div class="col-sm-offset-3 col-sm-6">
-				<div id="error"><?php echo $error; ?></div>
-			</div>
+			<div class="alert alert-danger error" role="alert" style="<?php if($error !=""){ ?> display:block; <?php } ?> "><span class="glyphicon glyphicon-exclamation-sign"></span> <?php echo $error; ?></div>
+		</div>
 			
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6" style="text-align:center; color:#fff; margin-bottom:15px;">	

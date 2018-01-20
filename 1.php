@@ -66,15 +66,15 @@
 					<li><a href="profile.php">Profile</a></li>
 					<li class="divider"></li>
 						<form action='logout.php' method = 'post'>
-							<input type="submit" name='logout' id ='logout' class="btn mybtn2 center" value='Logout'>
+							<input style="background:#0097a7;" type="submit" name='logout' id ='logout' class="btn mybtn2 center" value='Logout'>
 						</form>
 				  </ul>
 		  </ul>
 		</div>
 	</nav>    <!-- Nav bar Structure -->
 					
-		<div class="row center "> 
-		<h3 style ="color:black"> Search Date Here.. </h3> 
+		<div class="row center"> 
+		<h3 style ="color:black; font-family:Sofia;"> Search Date Here.. </h3> 
 			<div class="row center-align ">
 				<div class="col offset-s2 s8 center"> 
 				 <input type="text" class="datepicker" name = 'date' id = 'date' placeholder="Select Date">
@@ -93,6 +93,24 @@
 			</div>
 		  </div>
 		</div> 
+		
+	<footer class="page-footer" style="background:#0097a7;"> <!--Footer start-->
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Help</h5>
+                <p class="grey-text text-lighten-4">* You should select the date first, than click on search.</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © ZED INFOTECH PVT. LTD. 2018
+            <a class="grey-text text-lighten-4 right" href="#!">Our website</a>
+            </div>
+          </div>
+        </footer> <!--Footer End -->
 		
       <!--Import jQuery before materialize.js-->
       
