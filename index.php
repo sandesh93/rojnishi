@@ -81,14 +81,7 @@
 			
 			<div class="col-sm-offset-3 col-sm-6">
 			<div class="alert alert-danger error" role="alert" style="<?php if($error !=""){ ?> display:block; <?php } ?> "><span class="glyphicon glyphicon-exclamation-sign"></span> <?php echo $error; ?></div>
-		</div>
-			
-			<div class="form-group">
-				<div class="col-sm-offset-3 col-sm-6" style="text-align:center; color:#fff; margin-bottom:15px;">	
-					<input type="checkbox" name="keep" /> <label>Keep Me Logged In</label>
-				</div>
 			</div>
-			
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6">
 					<button type="submit" class="btn btn-info btn-lg mybtn center-block" name="submit" value="login">Log In</button><br/>

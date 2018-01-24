@@ -9,12 +9,13 @@
 			while($row = mysqli_fetch_assoc($result)) {
 				$name = $row['firstName']." ".$row['lastName'];
 				$photo = $row['photo'];
+				$email = $row['email'];
 ?>
 
 <html>
 	<head>
       <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
@@ -50,31 +51,37 @@
 				})
 			})
 			
-	 </script>
-	 <script>
-	  
 	</script>
     </head>
 	<body style="background:#e8e8e8;">
 	<nav>
 		<div class="nav-wrapper" style="background:#0097a7;">  <!-- Nav bar Structure -->
-		  <a href="2.php" class="brand-logo center "><h2 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h2></a>
+		  <a href="2.php" class="brand-logo center "><h3 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h3></a>
 		  <ul id="nav-mobile"  class="right " >
-		    <a class='dropdown-button' href='#' data-activates='dropdown1'><li><img style="width:50px; height:50px; margin-top:5px; margin-right:15px;" class="circle img-responsive" src="images/<?php echo $photo; ?>" alt="Contact Person"></li></a>
+		   <a class='dropdown-button' href='#' data-activates='dropdown1' style="width:200px;"><img style="width:50px; height:50px; margin-top:5px; margin-right:15px; float:right;" class="circle img-responsive" src="images/<?php echo $photo; ?>" alt="Contact Person"></a>
 		   <!-- Dropdown Structure -->
-				  <ul id='dropdown1' style="margin-top:70px; margin-left:-50px;" class='dropdown-content'>
-					<li><a href="profile.php">Profile</a></li>
-					<li class="divider"></li>
-						<form action='logout.php' method = 'post'>
-							<input style="background:#0097a7;" type="submit" name='logout' id ='logout' class="btn mybtn2 center" value='Logout'>
-						</form>
+				  <ul id='dropdown1' style="margin-top:70px;" class='dropdown-content'>
+					<li><a href="profile.php" >Profile</a></li>
+					<li><a class="" href="logout.php" >Logout</a></li>
+						
 				  </ul>
 		  </ul>
+		  
 		</div>
-	</nav>    <!-- Nav bar Structure -->
+	</nav>    <!-- Nav bar Structure --> 
 					
 		<div class="row center"> 
 		<h3 style ="color:black; font-family:Sofia;"> Search Date Here.. </h3> 
+		<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a href="profile.php" class="btn-floating red"><i class="material-icons">person</i></a></li>
+      <li><a href="1.php" class="btn-floating yellow darken-1"><i class="material-icons">search</i></a></li>
+      <li><a href="2.php" class="btn-floating green"><i class="material-icons">edit</i></a></li>
+    </ul>
+  </div>
 			<div class="row center-align ">
 				<div class="col offset-s2 s8 center"> 
 				 <input type="text" class="datepicker" name = 'date' id = 'date' placeholder="Select Date">
@@ -87,7 +94,7 @@
 		
 		<div class="row">
 		  <div class="col s12 offset-m2 m8">
-			<div class="card-panel flow-text hoverable animated bounce" style="background-image:url('https://hdwallsource.com/img/2015/6/old-notebook-paper-wallpaper-45973-47255-hd-wallpapers.jpg'); ">
+			<div class="card-panel flow-text hoverable animated bounce" style="">
 			<h5 id = 'date1'></h5>
 			<div id = "data"></div>
 			</div>
@@ -116,6 +123,11 @@
       
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/myscript.js"></script>
+	  <script>
+	  $( document ).ready(function(){
+	 $(".button-collapse").sideNav(); 
+	 });
+	  </script>
 </body>
 </html>
 <?php

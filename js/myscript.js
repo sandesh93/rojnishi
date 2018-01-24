@@ -22,3 +22,21 @@ $(document).ready(function(){
     closeOnSelect: false // Close upon selecting a date,
   });
 });
+
+$(document).ready(function() {
+	  // Show sideNav
+  $('.button-collapse').sideNav('show');
+  // Hide sideNav
+  $('.button-collapse').sideNav('hide');
+  // Destroy sideNav
+  $('.button-collapse').sideNav('destroy');
+	
+ });
+ 
+$( document ).ready(function(){
+	 $(".button-collapse").sideNav();  
+})
+ 
+ 
+ 
+ 

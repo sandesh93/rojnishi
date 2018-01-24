@@ -37,13 +37,14 @@
 	<html>
 	<head>
       <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="css/icons.css" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="css/animate.css"  media="screen,projection"/>
+	  <link type="text/css" rel="stylesheet" href="css/loaders.css"  media="screen,projection"/>
 	  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
       <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
-	  		<script type='text/javascript' src='js/jquery-3.2.1.js'></script>
+	  		
 			
 			<script type="text/javascript" src="js/sweetalert.min.js"></script> 
 			
@@ -78,16 +79,32 @@
 			</script>
     </head>
 <body style="background:#e8e8e8;">
-		<nav>
+	<nav>
 		<div class="nav-wrapper" style="background:#0097a7;">  <!-- Nav bar Structure -->
 		  <a href="2.php" class="brand-logo center "><h2 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h2></a>
 		  <ul id="nav-mobile"  class="right " >
-		   
 		  </ul>
+		  
 		</div>
-	</nav> <br>     <!-- Nav bar Structure --> 		
+	</nav> <br>     <!-- Nav bar Structure --> 	
+	  
+  
+	
 		<h2 class="center-align" style="font-family:Sofia;">Edit Profile</h2>
-		<a style="background:#0097a7;" href="2.php" class="waves-effect waves-light btn-large right animated tada"><i class="material-icons right">edit</i>Want to wright ? </a>
+		<div class="fixed-action-btn">
+		<a href="2.php" class="btn-floating btn-large waves-effect waves-light red right bottom"><i class="material-icons">edit</i></a>
+		</div>
+	<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a href="profile.php" class="btn-floating red"><i class="material-icons">person</i></a></li>
+      <li><a href="1.php" class="btn-floating yellow darken-1"><i class="material-icons">search</i></a></li>
+      <li><a href="2.php" class="btn-floating green"><i class="material-icons">edit</i></a></li>
+    </ul>
+    </div>
+		
 
 	<!-- Profile Update form -->
 		<div class="row">
@@ -166,20 +183,15 @@
 	  
 
       <!--Import jQuery before materialize.js-->
-      
+       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/myscript.js"></script>
-	  <script type="text/javascript">
-	  function myFunction() {
-		swal({
-			title: "Under construction",
-			text: "",
-							 // buttons: true,
-			icon: "success",
-		    dangerMode: true,
-			})
-	  }
-</script>
+	<script>
+	  $( document ).ready(function(){
+	 $(".button-collapse").sideNav(); 
+	 });
+	</script>
+
 </body>
 </html>
 	

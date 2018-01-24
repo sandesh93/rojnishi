@@ -89,19 +89,27 @@
 		<div class="nav-wrapper" style="background:#0097a7;">  <!-- Nav bar Structure -->
 		  <a href="2.php" class="brand-logo center "><h3 style="font-family:Sofia; font-weight:bold; margin-top:-0;">Rojnishi</h3></a>
 		  <ul id="nav-mobile"  class="right " >
-		   <a class='dropdown-button' href='#' data-activates='dropdown1'><li><img style="width:50px; height:50px; margin-top:5px; margin-right:15px;" class="circle img-responsive" src="images/<?php echo $photo; ?>" alt="Contact Person"></li></a>
+		   <a class='dropdown-button' href='#' data-activates='dropdown1' style="width:200px;"><img style="width:50px; height:50px; margin-top:5px; margin-right:15px; float:right;" class="circle img-responsive" src="images/<?php echo $photo; ?>" alt="Contact Person"></a>
 		   <!-- Dropdown Structure -->
-				  <ul id='dropdown1' style="margin-top:70px; margin-left:-50px;" class='dropdown-content'>
+				  <ul id='dropdown1' style="margin-top:70px;" class='dropdown-content'>
 					<li><a href="profile.php" >Profile</a></li>
-					<li class="divider"></li>
-						<form action='logout.php' method='post'>
-							<input style="background:#0097a7;" type="submit" name='logout' id ='logout' class="btn center" value='Logout'>
-						</form>
+					<li><a class="" href="logout.php" >Logout</a></li>
+						
 				  </ul>
 		  </ul>
 		  
 		</div>
 	</nav>    <!-- Nav bar Structure --> 
+	<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a href="profile.php" class="btn-floating red"><i class="material-icons">person</i></a></li>
+      <li><a href="1.php" class="btn-floating yellow darken-1"><i class="material-icons">search</i></a></li>
+      <li><a href="2.php" class="btn-floating green"><i class="material-icons">edit</i></a></li>
+    </ul>
+  </div>
   <br>
  
 		<div class="row">
